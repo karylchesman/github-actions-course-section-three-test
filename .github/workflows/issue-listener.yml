@@ -1,0 +1,12 @@
+name: Issue Listener
+on:
+  issues:
+    types: opened
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log Issue Event
+        run: |
+          echo "Issue #${{ github.event.issue.number }} opened by ${{ github.event.issue.user.name }}"
